@@ -7,6 +7,7 @@ Rust changes
 - run wasm-pack build
 - run npm install
 - run npx webpack
+
 Javascript changes
 - make edits to src/index.js
 - run npx webpack
