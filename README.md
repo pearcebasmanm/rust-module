@@ -4,7 +4,7 @@ A proof-of-concept module to tinker with the idea of using Rust in a Foundry VTT
 ## Testing Workflow
 Rust changes
 - make edits to rust/lib.rs
-- run wasm-pack build
+- run build_wasm.sh
 - refresh foundry (F5)
 
 Javascript changes
