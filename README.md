@@ -11,6 +11,6 @@ Javascript changes
 - make edits to js/index.js
 - refresh foundry (F5)
 
-## Errors
-This module is not yet functional, and this is the error it produces
-`Uncaught TypeError: Cannot read properties of undefined (reading 'rustFunction')`
+## Planned Capabilities
+- Interfaced with the Foundry API
+- Use a Rust UI framework
