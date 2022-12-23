@@ -14,5 +14,5 @@ Javascript changes
 
 ## Errors
 This module is not yet functional, and these are the errors it produces
-`GET http://localhost:30000/b80ce72080fe0972b3a8.module.wasm 404 (Not Found)`
-`Uncaught (in promise) TypeError: Failed to execute 'compile' on 'WebAssembly': HTTP status code is not ok`
+- `GET http://localhost:30000/b80ce72080fe0972b3a8.module.wasm 404 (Not Found)`
+- `Uncaught (in promise) TypeError: Failed to execute 'compile' on 'WebAssembly': HTTP status code is not ok`
