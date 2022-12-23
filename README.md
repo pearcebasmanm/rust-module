@@ -8,7 +8,7 @@ Rust changes
 - run npm install
 - run npx webpack
 Javascript changes
-- make edits top src/index.js
+- make edits to src/index.js
 - run npx webpack
 
 ## Errors
