@@ -8,7 +8,7 @@
   "description": "A proof-of-concept Foundry VTT module using the Rust programming language.",
   "main": "index.js",
   "author": "Max",
-  "license": "ISC",
+  "license": "MIT/Apache-2.0",
   "devDependencies": {
     "webpack": "^5.75.0",
     "webpack-cli": "^5.0.1"

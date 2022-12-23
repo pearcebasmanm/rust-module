@@ -1,10 +1,10 @@
 module.exports = {
-    mode: "production",
+    mode: "development",
     entry: "./src/index.js",
     experiments: {
         asyncWebAssembly: true
     },
     output: {
-        publicPath: "" // makes error message `Uncaught Error: Automatic publicPath is not supported in this browser` go away
+        publicPath: "" // silences error `Uncaught Error: Automatic publicPath is not supported in this browser`
     }
 }

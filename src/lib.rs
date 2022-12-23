@@ -2,9 +2,8 @@ use wasm_bindgen::prelude::*;
 
 // run Rust from JavaScript
 #[wasm_bindgen]
-pub fn rust() {
+pub fn rustfn() {
     // println!("Hello World (Rust)");
-    // jstest();
 }
 
 // // run JavaScript from Rust
