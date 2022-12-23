@@ -1,12 +1,12 @@
 {
-    "id": "rust_module",
-    "title": "Rust Module",
-    "description": "A proof-of-concept Foundry VTT module using the Rust programming language.",
-    "version": "0.1.0",
-    "authors": [{
-          "name": "Max"
-      }],
-    "esmodules": [
-      "dist/main.js"
-    ]
-}
+  "id": "rust_module",
+  "title": "Rust Module",
+  "description": "A proof-of-concept Foundry VTT module using the Rust programming language.",
+  "version": "0.1.0",
+  "authors": [{
+    "name": "Max"
+  }],
+  "esmodules": [
+    "./js/index.js"
+  ]
+} 

@@ -1,6 +1,3 @@
-/dist
 /node_modules
-/pkg
-/target
-/Cargo.lock
-/package-lock.json
+/rust/pkg
+/rust/target
