@@ -1,5 +1,5 @@
-import init, * as rust_module from "../wasm/rust_module.js";
+import init, * as wasm from "../wasm/rust_module.js";
 
 init().then(() => {})
 
-rust_module.rust_function()
+console.log(wasm.rustFunction())
