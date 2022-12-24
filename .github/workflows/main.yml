@@ -1,9 +1,8 @@
 name: Build Release Artifacts
-on: push
-# on: 
-#   push:
-#     tags:
-#       - "v*"
+on: 
+  push:
+    tags:
+      - "v*"
 
 jobs:
   build:
@@ -25,10 +24,27 @@ jobs:
       - name: Zip Files
         run: zip rust_module module.json LICENSE index.js pkg/rust_module.js pkg/rust_module_bg.wasm
         
-      # Creates the github release which includes the necessary files
+      # Find the version number this release should be
+      - name: Version Number
+        id: get-version
+        run: jq .version module.json
+        
+      # Creates the github release for this version
       - name: Create Release
         uses: ncipollo/release-action@v1
         with:
-          tag: v0.1.0
+          tag: ${{ steps.get-version.outputs.version }}
+          name: ${{ steps.get-version.outputs.version }}
+          body: TODO
           token: ${{ secrets.GITHUB_TOKEN }}
-          artifacts: "./rust_module.zip"
+          artifacts: "./module.json,./rust_module.zip"
+          
+      # Updates the latest release to point to this one
+      - name: Update Latest
+        uses: ncipollo/release-action@v1
+        with:
+          tag: latest
+          name: Latest
+          token: ${{ secrets.GITHUB_TOKEN }}
+          artifacts: "./module.json,./rust_module.zip"
+          
