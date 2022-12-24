@@ -7,6 +7,6 @@
     "name": "Max"
   }],
   "esmodules": [
-    "./js/index.js"
+    "javascript.js"
   ]
 }
