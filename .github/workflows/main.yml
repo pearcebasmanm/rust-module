@@ -1,0 +1,9 @@
+
+name: Build Release Artefacts
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - run: zip rust_module module.json LICENSE index.js pkg/rust_module.js pkg/rust_module_bg.wasm
