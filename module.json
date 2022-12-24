@@ -2,7 +2,7 @@
   "id": "rust_module",
   "title": "Rust Module",
   "description": "A proof-of-concept for using Rust in a Foundry VTT module.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "authors": [{
     "name": "Max"
   }],
