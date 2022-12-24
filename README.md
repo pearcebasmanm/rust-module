@@ -12,8 +12,8 @@ Javascript changes
 - refresh foundry (F5)
 
 ## Releasing Workflow
-- update the version number in module.json (both the "version" field, and in the url of the "download" field)
-- make a push to the repository starting with v (eg. v0.1.0, v3.26.4)
+Whenever you push a changed to module.json it will created a new release automatically
+- Remember to change both the "version" field, and the url of the "download" field
 
 ## Current Limitations
 - Interface with the Foundry API
