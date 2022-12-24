@@ -10,10 +10,13 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: "Make Output Folder"
+      - name: Make Output Folder
         run: mkdir dist
         
-      - name: "Build the wasm files"
+      - name: Install wasm-pack
+        run: curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh
+        
+      - name: Build the wasm files
         run: wasm-pack build --target web
       
       - name: Zip Files
