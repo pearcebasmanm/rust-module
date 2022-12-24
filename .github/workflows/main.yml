@@ -1,5 +1,5 @@
-name: Build Release Artifacts
-on: 
+name: Create Release With Artifacts
+on:
   push:
     paths:
       - "module.json"
@@ -8,29 +8,22 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      # Adds the files in this repository to the evironment this action runs in
-      - name: Prepare Environment
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
         
-      # Installs the tool which compiles rust into webassembly
       - name: Install wasm-pack
         run: curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh
         
-      # Compile rust into webassembly
-      - name: Build wasm Files
+      - name: Run wasm-pack
         run: wasm-pack build --target web
       
-      # Compresses the files the module needs into a zip file
-      - name: Zip Files
+      - name: Create module zip
         run: zip rust-module module.json LICENSE index.js pkg/rust_module.js pkg/rust_module_bg.wasm
         
-      # Get the release number from module.json
-      - name: Version Number
+      - name: Get version number
         id: get-version
-        run: echo "version=$(echo -n "v" ; jq -r .version module.json echo)" >> $GITHUB_OUTPUT
+        run: echo "version=v$(jq -r .version module.json)" >> $GITHUB_OUTPUT
         
-      # Creates the github release for this version
-      - name: Create Release
+      - name: Create release
         uses: ncipollo/release-action@v1
         with:
           tag: ${{ steps.get-version.outputs.version }}
@@ -39,8 +32,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           artifacts: "./module.json,./rust-module.zip"
           
-      # Updates the latest release to point to this one
-      - name: Update Latest
+      - name: Update latest
         uses: ncipollo/release-action@v1
         with:
           tag: latest
