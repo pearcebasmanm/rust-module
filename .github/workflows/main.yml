@@ -29,5 +29,6 @@ jobs:
       - name: Create Release
         uses: ncipollo/release-action@v1
         with:
+          tag_name: v0.1.0
           token: ${{ secrets.GITHUB_TOKEN }}
           artifacts: "./rust_module.zip"
