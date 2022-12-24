@@ -27,7 +27,7 @@ jobs:
       # Get the release number from module.json
       - name: Version Number
         id: get-version
-        run: echo "version::$(echo -n "v" ; jq -r .version module.json echo)" >> $GITHUB_OUTPUT
+        run: echo "version=$(echo -n "v" ; jq -r .version module.json echo)" >> $GITHUB_OUTPUT
         
       # Creates the github release for this version
       - name: Create Release
