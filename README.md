@@ -15,6 +15,6 @@ Javascript changes
 Whenever you push a changed to module.json it will create a new release automatically
 - Remember to change both the "version" field, and the url of the "download" field
 
-## Current Limitations
+## Potential Goals
 - Interface with the Foundry API
 - Use a Rust UI framework
