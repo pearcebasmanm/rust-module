@@ -32,11 +32,3 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           artifacts: "./module.json,./rust-module.zip"
           
-      - name: Update latest
-        uses: ncipollo/release-action@v1
-        with:
-          tag: latest
-          name: Latest
-          token: ${{ secrets.GITHUB_TOKEN }}
-          artifacts: "./module.json,./rust-module.zip"
-          
