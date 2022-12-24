@@ -1,9 +1,19 @@
 
 name: Build Release Artefacts
-on: push
+on: 
+  push:
+    tags:
+      - "v*"
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - run: zip rust_module module.json LICENSE index.js pkg/rust_module.js pkg/rust_module_bg.wasm
+      - name: "Make Output Folder"
+        run: mkdir dist
+        
+      - name: "Build the wasm files"
+        run: wasm-pack build --target web
+      
+      - name: Zip Files
+        run: zip rust_module module.json LICENSE index.js pkg/rust_module.js pkg/rust_module_bg.wasm
