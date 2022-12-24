@@ -27,7 +27,7 @@ jobs:
         
       # Creates the github release which includes the necessary files
       - name: Create Release
-        uses: actions/create-release@v1
+        uses: ncipollo/release-action@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           artifacts: "./rust_module.zip"
