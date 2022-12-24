@@ -13,11 +13,11 @@ jobs:
       - name: Prepare Environment
         uses: actions/checkout@v3
         
-      # Installs the tool which complies rust into webassembly
+      # Installs the tool which compiles rust into webassembly
       - name: Install wasm-pack
         run: curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh
         
-      # Complie rust into webassembly
+      # Compile rust into webassembly
       - name: Build wasm Files
         run: wasm-pack build --target web
       
@@ -29,4 +29,5 @@ jobs:
       - name: Create Release
         uses: actions/create-release@v1
         with:
-          artefacts: "./rust_module.zip"
+          token: ${{ secrets.GITHUB_TOKEN }}
+          artifacts: "./rust_module.zip"
