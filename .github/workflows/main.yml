@@ -1,5 +1,5 @@
 name: Build Release Artefacts
-on:push
+on: push
 
 # on: 
 #   push:
