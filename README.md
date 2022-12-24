@@ -11,6 +11,6 @@ Javascript changes
 - make edits to js/index.js
 - refresh foundry (F5)
 
-## What it can't do (at least not yet)
+## Current Limitations
 - Interface with the Foundry API
 - Use a Rust UI framework
