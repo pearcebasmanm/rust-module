@@ -1,4 +1,4 @@
-name: Build Release Artefacts
+name: Build Release Artifacts
 on: push
 # on: 
 #   push:
@@ -9,19 +9,24 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-    
-      - name: Make Output Folder
-        run: mkdir dist
+      # Adds the files in this repository to the evironment this action runs in
+      - name: Prepare Environment
+        uses: actions/checkout@v3
         
+      # Installs the tool which complies rust into webassembly
       - name: Install wasm-pack
         run: curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh
         
-      - name: See where we're running
-        run: ls
-        
-      - name: Build the wasm files
+      # Complie rust into webassembly
+      - name: Build wasm Files
         run: wasm-pack build --target web
       
+      # Compresses the files the module needs into a zip file
       - name: Zip Files
         run: zip rust_module module.json LICENSE index.js pkg/rust_module.js pkg/rust_module_bg.wasm
+        
+      # Creates the github release which includes the necessary files
+      - name: Create Release
+        uses: actions/create-release@v1
+        with:
+          artefacts: "./rust_module.zip"
