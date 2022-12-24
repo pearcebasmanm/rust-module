@@ -8,5 +8,8 @@
   }],
   "esmodules": [
     "index.js"
-  ]
+  ],
+  "url": "https://github.com/pearcebasmanm/rust_module",
+  "manifest": "https://github.com/pearcebasmanm/rust_module/releases/latest/download/module.json",
+  "download": "https://github.com/pearcebasmanm/rust_module/releases/download/v0.1.1/rust_module.zip"
 }

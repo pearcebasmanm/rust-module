@@ -12,7 +12,8 @@ Javascript changes
 - refresh foundry (F5)
 
 ## Releasing Workflow
-`zip rust_module module.json LICENSE index.js pkg/rust_module.js pkg/rust_module_bg.wasm`
+- update the version number in module.json (both the "version" field, and in the url of the "download" field)
+- push a tag starting with "v" (note to self, find out what that means)
 
 ## Current Limitations
 - Interface with the Foundry API
