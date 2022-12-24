@@ -12,7 +12,7 @@ Javascript changes
 - refresh foundry (F5)
 
 ## Releasing Workflow
-Whenever you push a changed to module.json it will created a new release automatically
+Whenever you push a changed to module.json it will create a new release automatically
 - Remember to change both the "version" field, and the url of the "download" field
 
 ## Current Limitations
