@@ -1,6 +1,5 @@
 name: Build Release Artefacts
 on: push
-
 # on: 
 #   push:
 #     tags:
@@ -15,6 +14,9 @@ jobs:
         
       - name: Install wasm-pack
         run: curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh
+        
+      - name: See where we're running
+        run: ls
         
       - name: Build the wasm files
         run: wasm-pack build --target web
