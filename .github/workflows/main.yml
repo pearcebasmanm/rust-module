@@ -22,7 +22,7 @@ jobs:
       
       # Compresses the files the module needs into a zip file
       - name: Zip Files
-        run: zip rust_module module.json LICENSE index.js pkg/rust_module.js pkg/rust_module_bg.wasm
+        run: zip rust-module module.json LICENSE index.js pkg/rust_module.js pkg/rust_module_bg.wasm
         
       # Get the release number from module.json
       - name: Version Number
@@ -37,7 +37,7 @@ jobs:
           name: ${{ steps.get-version.outputs.version }}
           body: TODO
           token: ${{ secrets.GITHUB_TOKEN }}
-          artifacts: "./module.json,./rust_module.zip"
+          artifacts: "./module.json,./rust-module.zip"
           
       # Updates the latest release to point to this one
       - name: Update Latest
@@ -46,5 +46,5 @@ jobs:
           tag: latest
           name: Latest
           token: ${{ secrets.GITHUB_TOKEN }}
-          artifacts: "./module.json,./rust_module.zip"
+          artifacts: "./module.json,./rust-module.zip"
           
