@@ -24,10 +24,10 @@ jobs:
       - name: Zip Files
         run: zip rust_module module.json LICENSE index.js pkg/rust_module.js pkg/rust_module_bg.wasm
         
-      # Find the version number this release should be
+      # Get the release number from module.json
       - name: Version Number
         id: get-version
-        run: echo "::set-output name=version::$(echo -n "v" ; jq -r .version module.json echo)"
+        run: echo "version::$(echo -n "v" ; jq -r .version module.json echo)" >> $GITHUB_OUTPUT
         
       # Creates the github release for this version
       - name: Create Release
