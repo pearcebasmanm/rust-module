@@ -27,7 +27,7 @@ jobs:
       # Find the version number this release should be
       - name: Version Number
         id: get-version
-        run: jq .version module.json
+        run: echo -n "v" ; jq -r .version module.json
         
       # Creates the github release for this version
       - name: Create Release
