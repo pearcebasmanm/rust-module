@@ -13,7 +13,7 @@ Javascript changes
 
 ## Releasing Workflow
 - update the version number in module.json (both the "version" field, and in the url of the "download" field)
-- push a tag starting with "v" (note to self, find out what that means)
+- make a push to the repository starting with v (eg. v0.1.0, v3.26.4)
 
 ## Current Limitations
 - Interface with the Foundry API
