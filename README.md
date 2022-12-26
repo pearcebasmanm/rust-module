@@ -16,5 +16,5 @@ Whenever you push a changed to module.json it will create a new release automati
 - Remember to change both the "version" field, and the url of the "download" field
 
 ## Potential Goals
-- Interface with the Foundry API
+- Call Foundry API from Rust
 - Use a Rust UI framework
