@@ -17,7 +17,7 @@ jobs:
         run: wasm-pack build --target web
       
       - name: Create module zip
-        run: zip rust-module module.json LICENSE index.js pkg/rust_module.js pkg/rust_module_bg.wasm
+        run: zip rust-module module.json LICENSE index.js pkg/rust_module.js pkg/rust_module_bg.wasm pkg/snippets/*
         
       - name: Get version number
         id: get-version
