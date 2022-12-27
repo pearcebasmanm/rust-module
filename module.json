@@ -4,7 +4,7 @@
   "description": "A proof-of-concept for using Rust in a Foundry VTT module.",
   "version": "0.2.0",
   "authors": [{
-    "name": "Max",
+    "name": "Max", 
     "discord": "Bolt#4861"
   }],
   "esmodules": [
